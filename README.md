@@ -15,6 +15,6 @@ data-query="../_api/web/lists/getbytitle('List Name')/Items?$filter=Status eq 'S
 ````
 Example use as a function for a button, etc.
 
-```` W.queryList("<query string>","Widget Name","WidgetID",'{JSON DATA}',@boolean); ````
+```` W.queryList("<query string>","Widget Name","WidgetID",'{JSON}',@boolean); ````
 
  #### Note: SharePoint's lookup fields return asynchronously, which affects field load order. In order to keep the ID at the top, adjustments were made to element rendering.
