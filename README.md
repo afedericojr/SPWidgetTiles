@@ -5,7 +5,7 @@ Queries a SharePoint list and displays the query result in a widget tile.
 * @description Queries a SharePoint list and displays the query result in a widget tile.
 * @author AFEDERICO
 * @todo Test against lookup fields other than a person lookup
-* @requires DIV areas be defined with data attributes
+* @requires DIV areas be defined with data attributes. Multiple divs with unique ID's may be used.
 ````
 <div id="widget1" 
 class="widget style4" 
