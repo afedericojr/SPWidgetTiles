@@ -1,5 +1,6 @@
 /**
  * @description Queries a SharePoint list and displays the query result in a widget tile.
+ * @description Currently accepts $select queries and /ItemCount
  * @author AFEDERICO
  * @todo Test against lookup fields other than a person lookup
  * @requires DIV areas be defined with data attributes. Multiple divs with unique ID's may be used.
@@ -41,7 +42,7 @@ document.addEventListener('DOMContentLoaded', function () {
 /**
  * Main function for processor
  * 
- * Example for manual call: W.queryList("<query string>","Widget Name","WidgetID",'{JSON DATA}',@boolean);
+ * Example for manual call: W.queryList("<query string>","Widget Name","WidgetID",'{JSON}',@boolean);
  * 
  * @param {*} query SP API Query String such as ../_api/web/lists/getbytitle('List Name')/Items?$filter=Status eq 'Some Status'&$select=id,Title,To/Title,Field_x0020_Name, Qty, Status&$OrderBy=Id desc&$top=1&$expand=To
  * @param {*} heading Heading for the widget
