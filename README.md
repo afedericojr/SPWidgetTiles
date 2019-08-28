@@ -13,4 +13,8 @@ data-labels='{"Title":"From"}'
 data-query="../_api/web/lists/getbytitle('List Name')/Items?$filter=Status eq 'Some Status'&$select=id,Title,To/Title,Field_x0020_Name, Qty, Status&$OrderBy=Id desc&$top=1&$expand=To">
 </div>
 ````
+Example use as a function for a button, etc.
+
+```` W.queryList("<query string>","Widget Name","WidgetID",'{JSON DATA}',@boolean); ````
+
  #### Note: SharePoint's lookup fields return asynchronously, which affects field load order. In order to keep the ID at the top, adjustments were made to element rendering.
