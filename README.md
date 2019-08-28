@@ -1,6 +1,5 @@
-# SPWidgetTiles
+# SPWidgetTiles - SharePoint 2016 REST API
 Queries a SharePoint list and displays the query result in a widget tile.
-
 
 * @description Queries a SharePoint list and displays the query result in a widget tile.
 * @author AFEDERICO
