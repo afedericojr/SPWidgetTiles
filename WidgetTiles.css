@@ -1,0 +1,50 @@
+.itemID{
+    display:block;
+    padding-top: 10px;
+    font-size: 2em;
+}
+
+.itemCount{
+    display:block;
+    padding-top: 0px;
+    font-size: 3em;
+}
+
+.title {
+    font-size: 2em;
+    border-bottom: solid white 1px;
+}
+
+.widget{
+    padding: 20px;
+    margin: 5px;
+    float: left;
+    color: white;
+    font-size: 1.2em;
+    -webkit-box-shadow: 0px 0px 0px 4px rgba(0,0,0,0.2); 
+    box-shadow: 0px 0px 0px 4px rgba(0,0,0,0.2);
+}
+
+.widget > ul > li > .label, .itemID > .label {
+    font-weight: bolder;
+    margin-right:5px;
+}
+
+.widget > ul {
+    list-style-type:none;
+    padding-left: 0;
+    margin:0;
+}
+
+.style1 {
+    background-color: rgb(10, 86, 139);
+}
+.style2 {
+    background-color: rgb(78, 138, 0);
+}
+.style3 {
+    background-color: rgb(71, 21, 128);
+}
+.style4 {
+    background-color: rgb(126, 6, 6);
+}
