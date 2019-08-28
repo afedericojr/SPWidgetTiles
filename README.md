@@ -1,5 +1,9 @@
 # SPWidgetTiles - SharePoint 2016 REST API
 
+Commonly, with a workflow intensive process in a SharePoint list, users are left just adding the list to their homepage with a custom view which is static and boring.
+These tiles work nicely as a dashboard with a query for each tile to display status updates, etc, and keep it fresh. If the data isn't available, the widget collapses, and will be redrawn when it is available.
+The interval timer is currently set to 5 seconds so that the tiles refresh with current data.
+
 * @description Queries a SharePoint list and displays the query result in a widget tile.
 * @description Currently accepts $select queries and /ItemCount
 * @author AFEDERICO
