@@ -6,6 +6,8 @@ The interval timer is currently set to 5 seconds so that the tiles refresh with 
 
 * @description Queries a SharePoint list and displays the query result in a widget tile.
 * @description Currently accepts $select queries and /ItemCount
+* @description Use a data attribute of data-count as a boolean to get a filtered count of items.
+* @description e.g. W.queryList(query, heading, widgetid, labelSubs, itemCount, stopRefresh)
 * @description Written in ES5 for IE11 compatability.
 * @author AFEDERICO
 * @todo Test against lookup fields other than a person lookup
@@ -14,13 +16,14 @@ The interval timer is currently set to 5 seconds so that the tiles refresh with 
 <div id="widget1" 
 class="widget style4" 
 data-heading="My Heading" 
-data-labels='{"Title":"From"}' 
+data-labels='{"Title":"From"}'
+data-count=false
 data-query="../_api/web/lists/getbytitle('List Name')/Items?$filter=Status eq 'Some Status'&$select=id,Title,To/Title,Field_x0020_Name, Qty, Status&$OrderBy=Id desc&$top=1&$expand=To">
 </div>
 ````
 Example use as a function for a button, etc.
 
-```` W.queryList("<query string>","Widget Name","WidgetID",'{JSON}',@boolean); ````
+```` W.queryList("<query string>","Widget Name","WidgetID",'{JSON}',@boolean,@boolean); ````
 
  #### Note: SharePoint's lookup fields return asynchronously, which affects field load order. In order to keep the ID at the top, adjustments were made to element rendering.
 
