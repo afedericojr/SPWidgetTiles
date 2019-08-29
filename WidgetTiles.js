@@ -24,10 +24,11 @@ document.addEventListener('DOMContentLoaded', function () {
         console.log(widgets);
         for (var i = 0; i < widgets.length; i++) {
             var query = widgets[i].dataset.query;
-            var heading = widgets[i].dataset.heading;
-            var labelSubs = widgets[i].dataset.labels;
-            var stopRefresh; 
-            W.queryList(query, heading, widgets[i].id, labelSubs, stopRefresh)
+            var heading = widgets[i].dataset.heading ? widgets[i].dataset.heading : 'No Heading Provided';
+            var labelSubs = widgets[i].dataset.labels ? widgets[i].dataset.labels : '';
+            var itemCount = widgets[i].dataset.count ? widgets[i].dataset.count : false;
+            var stopRefresh = stopRefresh ? stopRefresh : false; 
+            W.queryList(query, heading, widgets[i].id, labelSubs, itemCount, stopRefresh)
         }
     }
     getWidgets(); // Run first
@@ -42,7 +43,8 @@ document.addEventListener('DOMContentLoaded', function () {
 /**
  * Main function for processor
  * 
- * Example for manual call: W.queryList("<query string>","Widget Name","WidgetID",'{JSON}',@boolean);
+ * Example for manual call: W.queryList("<query string>","Widget Name","WidgetID",'{JSON}',@boolean,@boolean);
+ * W.queryList(query, heading, widgetid, labelSubs, itemCount, stopRefresh)
  * 
  * @param {*} query SP API Query String such as ../_api/web/lists/getbytitle('List Name')/Items?$filter=Status eq 'Some Status'&$select=id,Title,To/Title,Field_x0020_Name, Qty, Status&$OrderBy=Id desc&$top=1&$expand=To
  * @param {*} heading Heading for the widget
@@ -50,9 +52,7 @@ document.addEventListener('DOMContentLoaded', function () {
  * @param {*} labelSubs JSON object of renamed columns. {"Old Name","New Name"}
  * @param {*} stopRefresh stopRefresh if true
  */
-W.queryList = function queryList(query, heading, widget, labelSubs, stopRefresh) {
-    labelSubs = labelSubs || ''; // set empty if null
-    stopRefresh = stopRefresh || false; // set false if null
+W.queryList = function queryList(query, heading, widget, labelSubs, itemCount, stopRefresh) {
     if (stopRefresh){
         clearInterval(W.widgetRefresh); // clear widget refresh when function passes stopRefresh:true
     }
@@ -88,10 +88,15 @@ W.queryList = function queryList(query, heading, widget, labelSubs, stopRefresh)
 
             // Check if it is an ItemCount query
             if (W.rData.hasOwnProperty('ItemCount')) {
-                console.log('has item count');
+                console.log('query is a total list item count');
                 W.rData = W.rData.ItemCount;
                 htmlSpanItemID.innerHTML = W.rData;
-            } else {
+            } else if (itemCount){
+                console.log('query is a filtered item count');
+                W.rData = W.rData.results.length;
+                htmlSpanItemID.innerHTML = W.rData;
+            }
+            else {
                 // Render all other queries
                 W.rData = W.rData.results[0];
                 console.log(W.rData);
