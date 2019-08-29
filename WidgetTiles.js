@@ -105,7 +105,7 @@ W.queryList = function queryList(query, heading, widget, labelSubs, itemCount, s
                 var keys = Object.keys(W.rData);
                 for (var i = 1; i < keys.length - 1; i++) {
                     var label = keys[i];
-                    var column = W.rData[label];
+                    var column = W.rData[label] ? W.rData[label] : '';
                     if (typeof (column) == 'object') { // Check for nested lookup values such as people picker
                         column = W.rData[label]['results'][0]['Title'];
                     }
