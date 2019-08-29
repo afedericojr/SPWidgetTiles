@@ -67,6 +67,7 @@ W.queryList = function queryList(query, heading, widget, labelSubs, stopRefresh)
             */
             W.widget = document.getElementById(widget);
             W.widget.innerHTML = "";
+            W.widget.style.display = "block";
             var htmlSpanTitle = document.createElement('SPAN');
             var htmlSpanItemID = document.createElement('SPAN');
             var htmlUL = document.createElement('UL');
@@ -136,7 +137,7 @@ W.queryList = function queryList(query, heading, widget, labelSubs, stopRefresh)
                     renderData();
                 } catch (err) {
                     console.log(widget + " experienced an error.")
-                    W.widget.outerHTML = "";
+                    W.widget.style.display = "none";
                     console.log(widget + " removed.")
                 }
             } else {
