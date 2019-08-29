@@ -23,3 +23,15 @@ Example use as a function for a button, etc.
 ```` W.queryList("<query string>","Widget Name","WidgetID",'{JSON}',@boolean); ````
 
  #### Note: SharePoint's lookup fields return asynchronously, which affects field load order. In order to keep the ID at the top, adjustments were made to element rendering.
+
+## Screenshots
+### (Side by side to show automatic refresh)
+#### All Queries Successful
+![All Queries](/screenshots/AllQueryResults.jpg)
+#### Missing Query Result
+![Missing Query Result](/screenshots/MissingQueryResult.jpg)
+#### Recreate Tile From Query Result
+![Recreate Tile From Query Result](/screenshots/RecreateTileFromQueryResult.jpg)
+#### Script Snippet
+![Script Snippet](/screenshots/ScriptSnippet.jpg)
+
