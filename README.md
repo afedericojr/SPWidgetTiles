@@ -5,7 +5,7 @@ These tiles work nicely as a dashboard with a query for each tile to display sta
 The interval timer is currently set to 5 seconds so that the tiles refresh with current data.
 
 * @description Queries a SharePoint list and displays the query result in a widget tile.
-* @description Currently accepts $select queries and /ItemCount
+* @description Currently accepts $select queries and /ItemCount.
 * @description Use a data attribute of data-count as a boolean to get a filtered count of items.
 * @description e.g. W.queryList(query, heading, widgetid, labelSubs, itemCount, stopRefresh)
 * @description Written in ES5 for IE11 compatability.
